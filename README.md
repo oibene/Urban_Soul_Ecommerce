@@ -1,23 +1,18 @@
-# Urban_Soul_Ecommerce
-Um projeto de um e-commerce para aprender a utilizar ferramentas, funcionalidades e aprimorar habilidades técnicas.
+## :Clipboard: SUMáRIO
+
+- [Objetivo](#objetivo) <br>
+- [Linguagens e Aplicações](#linguagens-e-aplicações-utilizadas) <br>
+- [Documentação e Manual](#documentação-e-manual) <br>
+- [Preview](#preview-do-site) <br>
 
 ****
 
-# SUMARIO
-
-[Objetivo](#objetivo)
-[Objetivo](#linguagens-e-aplicações-utilizadas)
-[Objetivo](#documentação-e-manual)
-[Objetivo](#preview-do-site)
-
-****
-
-## OBJETIVO
+## :Pushpin: OBJETIVO
  Esse projeto tem como objetivo ampliar meus conhecimentos em desenvolvimento WEB, banco de dados e UI/UX. 
 
 ****
 
-## LINGUAGENS E APLICAÇÕES UTILIZADAS
+## :Memo: LINGUAGENS E APLICAÇÕES UTILIZADAS
  Para o design de telas será utilizado o figma, link do projeto abaixo.
  
  [Design do Projeto no Figma](https://www.figma.com/design/UYhSxr5YA4a3qpLkndqpIy/Urban_Soul?node-id=0-1&t=5fhOM2augt4dKMt3-1)
@@ -26,10 +21,10 @@ Um projeto de um e-commerce para aprender a utilizar ferramentas, funcionalidade
 
 ****
 
-## DOCUMENTAÇÃO E MANUAL
+## :Decorated notebook: DOCUMENTAÇÃO E MANUAL
  Será disponibilizado um manual simples a medida do desenvolvimento do site
 
 ****
 
-## PREVIEW DO SITE
+## :PC: PREVIEW DO SITE
  Em desenvolvimento...
