@@ -18,7 +18,7 @@
   - **Login:** Um pop-out simples. Caso o usuário nao possua conta no site existe a opção de cadastro. Futuramente será implementado a opção "Esqueci minha senha".
   - **Pagina de Filtros:** Uma parte exslusiva do site para busca de produtos de forma mais detalhada, permitindo o usuário filtrar itens pelo preço, tamanhos disponiveis, cores, estilos, entre diversas opções.
 
- *Como se trata de um protótipo funções como e-mail de atendimento ao clinete, telefone, termos de uso e politica de privacidade e ajuda (footer em geral) são meramente ilustrativas podendo ser implementadas futuramente.*
+ *Como se trata de um protótipo funções como e-mail de atendimento ao cliente, telefone, termos de uso e politica de privacidade e ajuda (footer em geral) são meramente ilustrativas podendo ser implementadas futuramente.*
 
 Como um produto exclusivo para uma empresa ficticia, os produtos são adicionados diretamente a um banco de dados e não sendo possível edita-los diretamente pelo site. Caso se faça necessário um perfil administrador pode ser adicionado para retirar produtos fora de estoque, apagar comentários e alterar promoções e banners.
  
