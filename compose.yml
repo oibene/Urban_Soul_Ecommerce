@@ -1,0 +1,30 @@
+# OI :)
+
+version: '3.8' # or later
+
+services:
+  web: #web service uwu
+    build: . # build the image on the directory
+    ports:
+      - "8000:5000" # Host/Container sla tambem
+    volumes:
+      - .:/code # mount on de dir at the container code
+    depends_on:
+      - db # puxa db ali embaixo
+    environment:
+      DATABASE_URL: "mariadb://localhost:3306/<database_name>" # 3306 == default port
+
+
+# DB pedido ali em cima
+
+  db:
+    image: mariadb:latest
+    environment:
+      MARIADB_ROOT_PASSWORD: pass
+      MARIADB_DATABASE: my database
+      MARIADB_USER: user
+      MARIADB_PASSWORD: pass
+    volumes:
+      - db_data: /var/lib/mysql
+  volumes:
+    db_data: #:P
