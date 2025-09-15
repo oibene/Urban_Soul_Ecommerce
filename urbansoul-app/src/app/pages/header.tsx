@@ -1,10 +1,50 @@
 import Image from 'next/image'
 import logo from '../../../public/logo.svg'
+import search from '../../../public/search.svg'
+import bag from '../../../public/shopping_bag.svg'
+import account from '../../../public/account_circle.svg'
+
 
 export default function Header(){
     return <div>
-        <a href= "#">
-            <Image src={logo} alt="Urban Soul" />
-        </a>
+
+        <div className="flex justify-center w-full h-10 bg-dark-gray mb-2">
+            <p className="text-light text-sm font-bold font-noto content-center ">UMA REVOLUÇÃO NO SEU GUARDA ROUPA</p>
+        </div>
+
+        <div className="flex mr-10 ml-10 h-15 justify-between">
+            <div className="content-center">
+                <a href= "#">
+                <Image src={logo} alt="Urban Soul" />
+                </a>
+            </div>
+
+            <div className="grid grid-flow-col gap-4 content-center font-noto text-sm text-dark-gray">
+                <a href="#">Masculino</a>
+                <a href="#">Feminino</a>
+                <a href="#">Kids</a>
+            </div>
+
+            <div className="content-center">
+            <div className="flex"> 
+                <div className="flex bg-white w-40 h-5 rounded-2xl">
+                    <Image className="ml-2" src={search} alt=""/>
+                    <p className="ml-2 text-gray font-bold font-noto text-xs content-center">Buscar</p>
+                </div>
+
+                <div className="flex ml-4 gap-2">
+                    <a href="#">
+                        <Image src={bag} alt=""/>
+                    </a>
+                    <a href="#">
+                        <Image src={account} alt=""/>
+                    </a>
+                </div>
+            </div>
+
+                
+            </div>
+
+        </div>
     </div>
 }

@@ -4,6 +4,9 @@ import Header from "./pages/header"
 
 export default function Page() {
     return (
-        <Header></Header>
+        <div className="bg-bglight">
+            <Header></Header>
+        </div>
+        
     )
 }
