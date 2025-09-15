@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+
+:root{
+    /* COLORS */
+
+    --bg-color: #d9d9d9;
+    --red: #990100;
+    --white: #e8e8e8;
+
+    --dark-gray: #333333;
+    --gray: #7d7d7d;
+
+    --text-color: #333333;
+    --text-color-alt: #d9d9d9;
+    --text-promotion: #14924f;
+
+    /* FONTS */
+
+    --font: "Noto Sans";   
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* DEFAULT */
+
+* {
+    background-color: var(--bg-color);
+}
+
+p {
+    font-family: var(--font);
+    font-size: 14px;
+    color: var(--text-color);
+}
