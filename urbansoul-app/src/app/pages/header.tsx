@@ -1,18 +1,18 @@
 import Image from 'next/image'
 
-import logo from '../../../public/logo.svg'
-import search from '../../../public/search.svg'
-import bag from '../../../public/shopping_bag.svg'
-import account from '../../../public/account_circle.svg'
+import logo from '../../../public/logos/logo.svg'
+import search from '../../../public//logos/search.svg'
+import bag from '../../../public//logos/shopping_bag.svg'
+import account from '../../../public/logos/account_circle.svg'
 
 export default function Header(){
     return (
-    <div>
+    <div className="bg-light">
         <div className="flex justify-center w-full h-10 bg-dark-gray mb-2">
             <p className="text-light text-sm font-bold font-noto content-center ">UMA REVOLUÇÃO NO SEU GUARDA ROUPA</p>
         </div>
 
-        <div className="flex mr-10 ml-10 h-15 justify-between">
+        <div className="flex mx-10 h-15 justify-between">
             <div className="content-center">
                 <a href= "#">
                 <Image src={logo} alt="Urban Soul" />

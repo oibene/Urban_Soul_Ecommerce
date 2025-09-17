@@ -1,12 +1,12 @@
 import Image from "next/image"
 
-import call from '../../../public/call.svg'
-import svg_email from '../../../public/3p.svg'
+import call from '../../../public/logos/call.svg'
+import svg_email from '../../../public/logos/3p.svg'
 
 export default function Footer() {
     return (
         <div className="bg-dark-gray w-full h-50">
-            <div className="flex mr-10 ml-10 justify-between font-noto text-light">
+            <div className="flex mx-10 justify-between font-noto text-light">
 
                 <div className="mt-5">
                     <p className="text-base font-bold"> Sobre a Urban Soul</p>

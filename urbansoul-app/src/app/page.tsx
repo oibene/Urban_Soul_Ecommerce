@@ -3,12 +3,22 @@ import './global.css'
 import Header from "./pages/header"
 import Footer from "./pages/footer"
 
+import Link from 'next/link'
+import Index from './pages'
+
 export default function Page() {
     return (
-        <div className="bg-bglight">
-            <Header></Header>
-            <Footer></Footer>
-        </div>
-        
+        <html>
+            <body>
+                <div className="bg-bglight">
+                    <Header></Header>
+
+                    {/* TODO: sistema de navegação */}
+                    <Index></Index>
+
+                    <Footer></Footer>
+                </div>
+            </body>
+        </html>
     )
 }
