@@ -5,13 +5,28 @@ import truck from "../../../public/logos/delivery_truck_speed.svg"
 import credit from "../../../public/logos/credit_score.svg"
 import savings from "../../../public/logos/savings.svg"
 
+{/* IMAGES CARROSSEL */}
+import image0 from "../../../public/images/category0.svg"
+import image1 from "../../../public/images/category1.svg"
+import image2 from "../../../public/images/category2.svg"
+import image3 from "../../../public/images/category3.svg"
+
+const images = [
+    image0,
+    image1,
+    image2,
+    image3,
+]
+
+import Carousel from "../components/carousel"
+
 export default function Index(){
     return (
         <div className="font-noto">
 
             {/* BANNER */}
             <div className="flex mx-10 justify-between">
-                <div className="grid grid-rows-2 gap-5 self-center font-noto text-dark-gray w-1/2 text-center">
+                <div className="grid grid-rows-2 gap-5 self-center font-noto text-dark-gray w-2/5 text-center">
                 
                     <p className="text-6xl font-light italic">NOVA COLEÇÃO PRIMAVERA VERÃO</p>
                     
@@ -52,7 +67,8 @@ export default function Index(){
                 </div>
             </div>
 
-            {/* TODO: CATEGORIAS MASC AND FEM*/}
+            {/* CATEGORIAS*/}
+            <Carousel data={images}></Carousel>
 
         </div>
     )
