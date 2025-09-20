@@ -11,11 +11,14 @@ import image1 from "../../../public/images/category1.svg"
 import image2 from "../../../public/images/category2.svg"
 import image3 from "../../../public/images/category3.svg"
 
-const images = [
-    image0,
-    image1,
-    image2,
-    image3,
+{/* TODO: padronizar tamanhos */}
+const images_fem = [
+    [image0, "CAMISA SIMPLES", "Camisas"],
+    [image1, "MANGA LONGA", "Novidades"],
+    [image2, "MOLETOM", "Conforto"],
+    [image3, "CASACOS", "Conforto"],
+    [image1, "MANGA LONGA", "Novidades"],
+    [image2, "MOLETOM", "Conforto"],
 ]
 
 import Carousel from "../components/carousel"
@@ -68,7 +71,7 @@ export default function Index(){
             </div>
 
             {/* CATEGORIAS*/}
-            <Carousel data={images}></Carousel>
+            <Carousel data={images_fem} theme="FEMININAS" itemsPerView={4}></Carousel>
 
         </div>
     )

@@ -1,8 +1,8 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
-const Carousel = ({data}) => {
+const Carousel = ({data, theme, itemsPerView}) => {
     var [currentIndex, setCurrentIndex] = useState(0);
 
     const nextSlide = () => {
@@ -16,21 +16,30 @@ const Carousel = ({data}) => {
         );
     };
 
+    const visibleItems = data.concat(data.slice(0, itemsPerView)).slice(currentIndex, currentIndex + itemsPerView)
+
+
     return (
         <div className="m-10">
             <div className="flex justify-center font-noto text-dark-gray mb-4">
-                <p className="text-base font-bold"> MELHORES ESCOLHAS FEMININAS </p>
+                <p className="text-base font-bold"> MELHORES ESCOLHAS {theme} </p>
             </div>
             
             <div className="flex justify-center">
                 <button onClick={prevSlide} className="rounded-full outline-1 w-10 h-10 text-xl font-bold cursor-pointer my-40 mx-10"> &lt; </button>
 
-                {data.map((item, index) => (
-                    <a key={index} href="#">
-                        <Image src={item} alt=""></Image>
-                    </a>
-                ))}
-
+                <div className="flex w-250 h-110 gap-10">
+                    {visibleItems.map((item, index) => (
+                        <a key={index} href="#" className="transform hover:scale-105 m-2 ease-in-out">
+                            <Image src={item[0]} alt=""></Image>
+                            <div className="font-noto text-dark-gray mt-2">
+                                <p className="font-bold text-base">{item[1]}</p>
+                                <p className="text-sm">{item[2]}</p>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+                
                 <button onClick={nextSlide} className="rounded-full outline-1 w-10 h-10 text-xl font-bold cursor-pointer my-40 mx-10"> &gt; </button>
             </div>
 
@@ -38,10 +47,13 @@ const Carousel = ({data}) => {
             <div className="flex justify-center">
 
                 {data.map((item, index) => (
-                    <button className={index === currentIndex ? "h-3 w-3 mx-1 outline rounded-full bg-dark-gray cursor-pointer" :
-                                                                "h-3 w-3 mx-1 outline rounded-full cursor-pointer"}></button>
+                    <button key={index} onClick={() => setCurrentIndex(index)}
+                            className={index === currentIndex ? "h-3 w-3 mx-1 outline rounded-full bg-dark-gray cursor-pointer" :
+                                                                "h-3 w-3 mx-1 outline rounded-full cursor-pointer"}>
+                    </button>
                 ))}
             </div>
+            
         </div>
     )
 }
