@@ -5,6 +5,8 @@ import search from '../../../public//logos/search.svg'
 import bag from '../../../public//logos/shopping_bag.svg'
 import account from '../../../public/logos/account_circle.svg'
 
+import ModalAccount from '../components/modalAccount'
+
 export default function Header(){
     return (
     <div className="bg-light">
@@ -42,9 +44,11 @@ export default function Header(){
                     </a>
                 </div>
             </div>
-
-                
             </div>
+        </div>
+
+        <div className="flex justify-end">
+            <ModalAccount></ModalAccount>
         </div>
     </div>
     )
