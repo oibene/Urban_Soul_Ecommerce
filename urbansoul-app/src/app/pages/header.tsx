@@ -1,4 +1,6 @@
+'use client'
 import Image from 'next/image'
+import { useEffect, useState, useRef } from 'react'
 
 import logo from '../../../public/logos/logo.svg'
 import search from '../../../public//logos/search.svg'
@@ -8,6 +10,32 @@ import account from '../../../public/logos/account_circle.svg'
 import ModalAccount from '../components/modalAccount'
 
 export default function Header(){
+    const [openAcc, setOpenAcc] = useState(false);
+    const handleModalAcc = () => setOpenAcc(!openAcc);
+
+    {/* CLICK OUTSIDE BUTTON AREA */}
+
+    {/* TODO: TERMINAR ISSO*/}
+
+    const modalRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const handleClickOut = (event: MouseEvent) => {
+            if ( openAcc &&
+                modalRef.current && !modalRef.current.contains(event.target as Node)
+            ){
+                setOpenAcc(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOut);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOut);
+        };
+
+    }, [openAcc, setOpenAcc]);
+
+
     return (
     <div className="bg-light">
         <div className="flex justify-center w-full h-10 bg-dark-gray mb-2">
@@ -39,16 +67,16 @@ export default function Header(){
                     <a href="#">
                         <Image src={bag} alt=""/>
                     </a>
-                    <a href="#">
+                    <button className="cursor-pointer" onClick={handleModalAcc}>
                         <Image src={account} alt=""/>
-                    </a>
+                    </button>
                 </div>
             </div>
             </div>
         </div>
 
         <div className="flex justify-end">
-            <ModalAccount></ModalAccount>
+            <ModalAccount ref={modalRef as React.RefObject<HTMLDivElement>} open={openAcc}></ModalAccount>
         </div>
     </div>
     )

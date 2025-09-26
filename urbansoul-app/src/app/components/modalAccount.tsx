@@ -2,9 +2,9 @@ import Image from "next/image"
 
 import person from "../../../public/logos/person.svg"
 
-export default function ModalAccount(){
+export default function ModalAccount({open}){
     return(
-        <div className="absolute bg-dark-gray w-70 h-52">
+        <div className={open ? "absolute bg-dark-gray w-70 h-52" : "hidden"}>
             <div className="font-noto font-bold text-light-gray text-sm">
 
                 <div className="m-3">
