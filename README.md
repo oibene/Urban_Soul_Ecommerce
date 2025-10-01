@@ -30,7 +30,14 @@ Como um produto exclusivo para uma empresa ficticia, os produtos são adicionado
  
  [Design do Projeto no Figma](https://www.figma.com/design/UYhSxr5YA4a3qpLkndqpIy/Urban_Soul?node-id=0-1&t=5fhOM2augt4dKMt3-1)
 
- Para o desenvolvimento do site E-commerce será utilizado biblioteca React para o frontend, Node.js e Express para o backend e banco de dados PostegreSQl.
+ Para o desenvolvimento do site E-commerce será utilizado biblioteca React para o frontend, link do repositorio app react abaixo.
+
+ [Repositorio React](https://github.com/oibene/urbansoul-app)
+ 
+ Para desenvolvimento do backend será utilizado uma API com nodejs
+ 
+ 
+ Será utilizado o banco de dados PostegreSQL.
 
 ****
 
