@@ -8,7 +8,7 @@
 ****
 
 ## SOBRE O SITE
- Um protótipo de uma loja virtual de roupas urbanas. Esse site comtempla o basico de qualquer loja virtual como:
+ Um protótipo de uma loja virtual de roupas urbanas. Esse site contempla o basico de qualquer loja virtual como:
  
   - **Pagina principal:** Seu objetivo é passar a vibe da loja com o uso de banners e slogans, alem de indicar as melhores sugestões de roupas para o usuário, contem as principais funções de forma simplificada como filtros e promoções.
   - **Pagina de Produto:** Detalha as informações do produto selecionado e permite o usuário de customizar sua compra escolhendo tamanhos, quantidadades e cores. O usuário poderá visualizar de maneira detalhada fotos do produto selecionado, descrições detalhadas, composição do produto e comentários de usuarios que já compraram esse produto. Caso o usuário possua uma conta no site, ele terá a opção de deixar seu comentário.
