@@ -1,0 +1,6 @@
+[submodule "urbansoul-app"]
+	path = urbansoul-app
+	url = git@github.com:oibene/urbansoul-app.git
+[submodule "urbansoul-API"]
+	path = urbansoul-API
+	url = git@github.com:oibene/urbansoul-API.git
