@@ -1,62 +1,123 @@
-create table customer (
-	customer_id serial primary key,
-	first_name varchar(50),
-	last_name varchar(50),
-	email varchar(50),
-	password text,
-	img_URL text
-);
-
-create table shipping_address (
-	postal_code integer,
-	address_line varchar(100),
-	address_number integer,
-	address_complement varchar(50),
-	district varchar(50),
-	city varchar(50),
-	state varchar(2),
-	country varchar(50),
-	customer_id integer references customer (customer_id)
-);
-
-create table product (
-	product_id serial primary key,
-	item_name varchar(50),
-	price decimal(8,2),
-	has_descount boolean,
-	descount decimal(8,2),
-	ranking integer,
-	category varchar(50),
-	item_size varchar(3),
-	gender varchar(3),
-	color varchar(25),
-	composition varchar(255),
-	description text
+CREATE TABLE product (
+	product_id SERIAL,
+	product_name VARCHAR(255),
+	category_code INTEGER,
+	gender VARCHAR(2),
+	size VARCHAR(2),
+	model_code INTEGER,
+	price DECIMAL(8,2),
+	descount_price DECIMAL(8,2),
 	
+	PRIMARY KEY (product_id),
+	
+	CONSTRAINT fk_category
+		FOREIGN KEY (category_code)
+		REFERENCES category (category_code)
+		ON DELETE CASCADE
+		ON UPDATE restrict,
+		
+	CONSTRAINT fk_model
+		FOREIGN KEY (model_code)
+		REFERENCES description (model_code)
+		ON DELETE CASCADE
+		ON UPDATE RESTRICT
 );
 
-create table category (
-	category_id serial primary key,
-	category_type varchar(50)
-	category_name varchar(50)
-);
-						
-create table orders (
-	order_id serial primary key,
-	total_amount decimal(8,2),
-	customer_id integer references customer (customer_id)
-);
-
-create table order_items (
-	order_id integer references orders (order_id),
-	product_id integer references product (product_id)
+CREATE TABLE customer (
+	customer_id SERIAL,
+	name VARCHAR(50),
+	last_name VARCHAR(50),
+	email VARCHAR(50),
+	password VARCHAR(255),
+	img_URL VARCHAR(50),
+	
+	PRIMARY KEY (customer_id)
 );
 
-create table comments (
-	comment_id serial primary key,
-	ranking integer,
-	comment_text text,
-	likes integer,
-	customer_id integer references customer (customer_id),
-	product_id integer references product (product_id)
+CREATE TABLE category (
+	category_code SERIAL,
+	description VARCHAR(50),
+
+	PRIMARY KEY (category_code)
 );
+
+CREATE TABLE images (
+	product_id INTEGER,
+	img_URL VARCHAR(50),
+	
+	CONSTRAINT fk_product
+		FOREIGN KEY (product_id)
+		REFERENCES product (product_id)
+		ON DELETE CASCADE
+		ON UPDATE RESTRICT
+);
+
+CREATE TABLE description (
+	model_code SERIAL,
+	description VARCHAR(255),
+	notes VARCHAR(255),
+	composition VARCHAR(255),
+	
+	PRIMARY KEY (model_code)
+);
+
+CREATE TABLE comments (
+	comment_id SERIAL,
+	customer_id INTEGER,
+	product_id INTEGER,
+	comment VARCHAR(255),
+	rating INTEGER,
+	
+	PRIMARY KEY (comment_id),
+	
+	CONSTRAINT fk_customer
+		FOREIGN KEY (customer_id)
+		REFERENCES customer (customer_id)
+		ON DELETE CASCADE
+		ON UPDATE restrict,
+		
+	CONSTRAINT fk_product
+		FOREIGN KEY (product_id)
+		REFERENCES product (product_id)
+		ON DELETE CASCADE
+		ON UPDATE RESTRICT
+);
+
+CREATE TABLE orders(
+	order_id SERIAL,
+	email VARCHAR(50),
+	postal_code VARCHAR(50),
+	address VARCHAR(255),
+	address_number VARCHAR(5),
+	complement VARCHAR(50),
+	district VARCHAR(50),
+	city VARCHAR(50),
+	state VARCHAR(50),
+	
+	order_items_id INTEGER,
+	total_value DECIMAL(8,2),
+	freight_company VARCHAR(50),
+	order_date TIMESTAMP,
+	
+	PRIMARY KEY (order_id),
+	
+	CONSTRAINT fk_order_items
+		FOREIGN KEY (order_items_id)
+		REFERENCES order_items (order_items_id)
+		ON DELETE CASCADE
+		ON UPDATE restrict
+);
+
+CREATE TABLE order_items(
+	order_items_id SERIAL,
+	product_id INTEGER,
+	
+	PRIMARY KEY (order_items_id),
+	
+	CONSTRAINT fk_product
+		FOREIGN KEY (product_id)
+		REFERENCES product (product_id)
+		ON DELETE CASCADE
+		ON UPDATE RESTRICT
+);
+
