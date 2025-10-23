@@ -4,6 +4,7 @@ CREATE TABLE product (
 	category_code INTEGER,
 	gender VARCHAR(2),
 	size VARCHAR(2),
+	color VARCHAR(50),
 	model_code INTEGER,
 	price DECIMAL(8,2),
 	descount_price DECIMAL(8,2),
