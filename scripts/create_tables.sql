@@ -1,5 +1,5 @@
 CREATE TABLE product (
-	product_id SERIAL,
+	product_id SERIAL NOT NULL,
 	product_name VARCHAR(255),
 	category_code INTEGER,
 	gender VARCHAR(2),
@@ -25,7 +25,7 @@ CREATE TABLE product (
 );
 
 CREATE TABLE customer (
-	customer_id SERIAL,
+	customer_id SERIAL NOT NULL,
 	name VARCHAR(50),
 	last_name VARCHAR(50),
 	email VARCHAR(50),
@@ -36,7 +36,7 @@ CREATE TABLE customer (
 );
 
 CREATE TABLE category (
-	category_code SERIAL,
+	category_code SERIAL NOT NULL,
 	description VARCHAR(50),
 
 	PRIMARY KEY (category_code)
@@ -54,7 +54,7 @@ CREATE TABLE images (
 );
 
 CREATE TABLE description (
-	model_code SERIAL,
+	model_code SERIAL NOT NULL,
 	description VARCHAR(255),
 	notes VARCHAR(255),
 	composition VARCHAR(255),
@@ -63,7 +63,7 @@ CREATE TABLE description (
 );
 
 CREATE TABLE comments (
-	comment_id SERIAL,
+	comment_id SERIAL NOT NULL,
 	customer_id INTEGER,
 	product_id INTEGER,
 	comment VARCHAR(255),
@@ -85,7 +85,7 @@ CREATE TABLE comments (
 );
 
 CREATE TABLE orders(
-	order_id SERIAL,
+	order_id SERIAL NOT NULL,
 	email VARCHAR(50),
 	postal_code VARCHAR(50),
 	address VARCHAR(255),
@@ -110,7 +110,7 @@ CREATE TABLE orders(
 );
 
 CREATE TABLE order_items(
-	order_items_id SERIAL,
+	order_items_id SERIAL NOT NULL,
 	product_id INTEGER,
 	
 	PRIMARY KEY (order_items_id),
@@ -121,4 +121,3 @@ CREATE TABLE order_items(
 		ON DELETE CASCADE
 		ON UPDATE RESTRICT
 );
-
