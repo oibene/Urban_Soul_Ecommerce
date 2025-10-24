@@ -113,8 +113,6 @@ CREATE TABLE order_items(
 	order_items_id SERIAL NOT NULL,
 	product_id INTEGER,
 	
-	PRIMARY KEY (order_items_id),
-	
 	CONSTRAINT fk_product
 		FOREIGN KEY (product_id)
 		REFERENCES product (product_id)
