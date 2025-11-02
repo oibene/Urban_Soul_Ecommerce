@@ -1,12 +1,12 @@
-insert into product (product_name, category_code, gender, size, color, model_code, price, descount_price)
+insert into products (product_name, category_code, gender, size, color, model_code, price, descount_price)
 values ('CAMISA TECH FEMININA', 2, 'F', 'GG', 'Preto', 1, 890.50, 712.00),
 	('CAMISA TECH FEMININA', 2, 'F', 'G', 'Preto', 1, 890.50, 712.00)
 
-insert into customer (name, last_name, email, password, img_URL)
+insert into customers (name, last_name, email, password, img_URL)
 values ('Icaro', 'O', 'icaro@email.com', '123', '/icaro.png'),
 	('T', 'Nagata', 'nagata@email.com', '456', '/nagata.png')
 
-insert into category (description)
+insert into categories (description)
 values ('Jeans'), ('Camisas'), ('Calças'), ('Manga Longa'), ('Moletom')
 
 insert into images (product_id, img_url)
@@ -15,7 +15,7 @@ values (1, 'blk_tshirt_fem01.png'),
 	(1, 'blk_tshirt_fem03.png'),
 	(1, 'blk_tshirt_fem04.png')
 
-insert into description (description, notes, composition)
+insert into details (description, notes, composition)
 values ('Camisa Tech Feminina - Leve, respirável e de secagem rápida, com modelagem ajustada que valoriza o corpo e garante conforto em qualquer ocasião.',
 'Características: Tecido tecnológico de alta performance; Secagem rápida e respirabilidade; Leve, elástico e confortável;Modelagem feminina levemente ajustada;Ideal para treinos, viagens e uso diário',
 '70% poliester; 30% algodão')

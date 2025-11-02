@@ -1,4 +1,4 @@
-CREATE TABLE product (
+CREATE TABLE products (
 	product_id SERIAL NOT NULL,
 	product_name VARCHAR(255),
 	category_code INTEGER,
@@ -13,29 +13,29 @@ CREATE TABLE product (
 	
 	CONSTRAINT fk_category
 		FOREIGN KEY (category_code)
-		REFERENCES category (category_code)
+		REFERENCES categories (category_code)
 		ON DELETE CASCADE
 		ON UPDATE restrict,
 		
 	CONSTRAINT fk_model
 		FOREIGN KEY (model_code)
-		REFERENCES description (model_code)
+		REFERENCES details (model_code)
 		ON DELETE CASCADE
 		ON UPDATE RESTRICT
 );
 
-CREATE TABLE customer (
-	customer_id SERIAL NOT NULL,
+CREATE TABLE customers (
+	customer_id BIGINT NOT NULL,
 	name VARCHAR(50),
 	last_name VARCHAR(50),
 	email VARCHAR(50),
 	password VARCHAR(255),
-	img_URL VARCHAR(50),
+	img_url VARCHAR(50),
 	
 	PRIMARY KEY (customer_id)
 );
 
-CREATE TABLE category (
+CREATE TABLE categories (
 	category_code SERIAL NOT NULL,
 	description VARCHAR(50),
 
@@ -48,12 +48,12 @@ CREATE TABLE images (
 	
 	CONSTRAINT fk_product
 		FOREIGN KEY (product_id)
-		REFERENCES product (product_id)
+		REFERENCES products (product_id)
 		ON DELETE CASCADE
 		ON UPDATE RESTRICT
 );
 
-CREATE TABLE description (
+CREATE TABLE details (
 	model_code SERIAL NOT NULL,
 	description VARCHAR(255),
 	notes VARCHAR(255),
@@ -73,13 +73,13 @@ CREATE TABLE comments (
 	
 	CONSTRAINT fk_customer
 		FOREIGN KEY (customer_id)
-		REFERENCES customer (customer_id)
+		REFERENCES customers (customer_id)
 		ON DELETE CASCADE
 		ON UPDATE restrict,
 		
 	CONSTRAINT fk_product
 		FOREIGN KEY (product_id)
-		REFERENCES product (product_id)
+		REFERENCES products (product_id)
 		ON DELETE CASCADE
 		ON UPDATE RESTRICT
 );
@@ -101,12 +101,6 @@ CREATE TABLE orders(
 	order_date TIMESTAMP,
 	
 	PRIMARY KEY (order_id),
-	
-	CONSTRAINT fk_order_items
-		FOREIGN KEY (order_items_id)
-		REFERENCES order_items (order_items_id)
-		ON DELETE CASCADE
-		ON UPDATE restrict
 );
 
 CREATE TABLE order_items(
@@ -115,7 +109,7 @@ CREATE TABLE order_items(
 	
 	CONSTRAINT fk_product
 		FOREIGN KEY (product_id)
-		REFERENCES product (product_id)
+		REFERENCES products (product_id)
 		ON DELETE CASCADE
 		ON UPDATE RESTRICT
 );

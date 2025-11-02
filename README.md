@@ -2,8 +2,9 @@
 
 - [Sobre](#sobre-o-site) <br>
 - [Linguagens e Aplicações](#linguagens-e-aplicações-utilizadas) <br>
-- [Documentação e Manual](#documentação-e-manual) <br>
-- [Preview](#preview-do-site) <br>
+- [Fluxograma](#fluxograma-de-navegação-pelo-site) <br>
+- [Requisitos](#requisitos-do-sistema) <br>
+- [Arquitetura](#arquitetura-mvc) <br>
 
 ****
 
@@ -12,10 +13,8 @@
  - Serviço focado em pessoas interessadas em roupas de estilo urbano de todos os generos e idades.
  - Como um serviço focado em estudo das tecnologias aplicadas, ele não será hospedado.
  - Esse serviço possue 5 telas (inicial, produto, perfil, pagamento e pesquisa), uso de modais e carrosel de produtos, sendo exclusivamente uma aplicação web com versões desktop e mobile.
-   Para visualização do design acesse o link [Design do Projeto no Figma](https://www.figma.com/design/UYhSxr5YA4a3qpLkndqpIy/Urban_Soul?node-id=0-1&t=5fhOM2augt4dKMt3-1)
+   Para visualização do design acesse o link do [Design do Projeto no Figma](https://www.figma.com/design/UYhSxr5YA4a3qpLkndqpIy/Urban_Soul?node-id=0-1&t=5fhOM2augt4dKMt3-1)
    
-****
-
 ****
 
 ## LINGUAGENS E APLICAÇÕES UTILIZADAS
@@ -27,8 +26,6 @@
  - Para a persistencia de dados é usado o banco PostegreSQL com a modelagem de dados abaixo
   ![Banco de dados com tabelas de cliente, produto e dependentes](diagrams/DB_diagram.png)
  
-****
-
 ****
 
 ## FLUXOGRAMA DE NAVEGAÇÃO PELO SITE
@@ -48,7 +45,6 @@
      
 ****
 
-****
 ## REQUISITOS DO SISTEMA
  Por se tratar de um sistema desenvolvido para estudo, é uma boa pratica mapear os requisitos funcionais e nao funcionais do sistema para melhor controle. Eles são:
 
@@ -69,19 +65,6 @@
 
 ****
 
-****
-## MODELO DE NEGOCIO
-  Em desenvolvimento
-  
-****
-
-****
-## MODELO DE DOMINIO
-  Em desenvolvimento
-  
-****
-
-****
 ## ARQUITETURA MVC
   Em desenvolvimento
   
