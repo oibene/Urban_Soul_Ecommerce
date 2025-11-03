@@ -2,9 +2,9 @@ insert into products (product_name, category_code, gender, size, color, model_co
 values ('CAMISA TECH FEMININA', 2, 'F', 'GG', 'Preto', 1, 890.50, 712.00),
 	('CAMISA TECH FEMININA', 2, 'F', 'G', 'Preto', 1, 890.50, 712.00)
 
-insert into customers (name, last_name, email, password, img_URL)
-values ('Icaro', 'O', 'icaro@email.com', '123', '/icaro.png'),
-	('T', 'Nagata', 'nagata@email.com', '456', '/nagata.png')
+insert into customers (customer_id, name, last_name, email, password, img_URL)
+values (251102001,'Icaro', 'O', 'icaro@email.com', '123', '/icaro.png'),
+	(251102002,'T', 'Nagata', 'nagata@email.com', '456', '/nagata.png')
 
 insert into categories (description)
 values ('Jeans'), ('Camisas'), ('Calças'), ('Manga Longa'), ('Moletom')
@@ -21,7 +21,7 @@ values ('Camisa Tech Feminina - Leve, respirável e de secagem rápida, com mode
 '70% poliester; 30% algodão')
 
 insert into comments (customer_id, product_id, comment, rating)
-values (1, 1, 'Muito bom produto bem embalado', 5)
+values (251102001, 1, 'Muito bom produto bem embalado', 5)
 
 insert into orders (email, postal_code, address, address_number, complement, district, city, state,
 order_items_id, total_value, freight_company, order_date)
