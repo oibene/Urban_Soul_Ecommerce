@@ -1,29 +1,3 @@
-CREATE TABLE products (
-	product_id SERIAL NOT NULL,
-	product_name VARCHAR(255),
-	category_code INTEGER,
-	gender VARCHAR(2),
-	size VARCHAR(2),
-	color VARCHAR(50),
-	model_code INTEGER,
-	price DECIMAL(8,2),
-	descount_price DECIMAL(8,2),
-	
-	PRIMARY KEY (product_id),
-	
-	CONSTRAINT fk_category
-		FOREIGN KEY (category_code)
-		REFERENCES categories (category_code)
-		ON DELETE CASCADE
-		ON UPDATE restrict,
-		
-	CONSTRAINT fk_model
-		FOREIGN KEY (model_code)
-		REFERENCES details (model_code)
-		ON DELETE CASCADE
-		ON UPDATE RESTRICT
-);
-
 CREATE TABLE customers (
 	customer_id BIGINT NOT NULL,
 	name VARCHAR(50),
@@ -31,8 +5,17 @@ CREATE TABLE customers (
 	email VARCHAR(50),
 	password VARCHAR(255),
 	img_url VARCHAR(50),
-	
+
 	PRIMARY KEY (customer_id)
+);
+
+CREATE TABLE details (
+	model_code SERIAL NOT NULL,
+	description VARCHAR(255),
+	notes VARCHAR(255),
+	composition VARCHAR(255),
+
+	PRIMARY KEY (model_code)
 );
 
 CREATE TABLE categories (
@@ -42,46 +25,34 @@ CREATE TABLE categories (
 	PRIMARY KEY (category_code)
 );
 
-CREATE TABLE images (
-	product_id INTEGER,
-	img_URL VARCHAR(50),
-	
-	CONSTRAINT fk_product
-		FOREIGN KEY (product_id)
-		REFERENCES products (product_id)
-		ON DELETE CASCADE
-		ON UPDATE RESTRICT
+CREATE TABLE products (
+	product_id SERIAL NOT NULL,
+	product_name VARCHAR(255),
+	category_code INTEGER REFERENCES categories (category_code),
+	gender VARCHAR(2),
+	size VARCHAR(2),
+	color VARCHAR(50),
+	model_code INTEGER REFERENCES details (model_code),
+	price DECIMAL(8,2),
+	descount_price DECIMAL(8,2),
+
+	PRIMARY KEY (product_id)
 );
 
-CREATE TABLE details (
-	model_code SERIAL NOT NULL,
-	description VARCHAR(255),
-	notes VARCHAR(255),
-	composition VARCHAR(255),
-	
-	PRIMARY KEY (model_code)
+CREATE TABLE images (
+	product_id INTEGER REFERENCES products (product_id),
+	img_URL VARCHAR(50)
 );
 
 CREATE TABLE comments (
 	comment_id SERIAL NOT NULL,
-	customer_id INTEGER,
-	product_id INTEGER,
+	customer_id INTEGER  REFERENCES customers (customer_id),
+	product_id INTEGER  REFERENCES products (product_id),
 	comment VARCHAR(255),
 	rating INTEGER,
-	
-	PRIMARY KEY (comment_id),
-	
-	CONSTRAINT fk_customer
-		FOREIGN KEY (customer_id)
-		REFERENCES customers (customer_id)
-		ON DELETE CASCADE
-		ON UPDATE restrict,
-		
-	CONSTRAINT fk_product
-		FOREIGN KEY (product_id)
-		REFERENCES products (product_id)
-		ON DELETE CASCADE
-		ON UPDATE RESTRICT
+	comment_date TIMESTAMP,
+
+	PRIMARY KEY (comment_id)
 );
 
 CREATE TABLE orders(
@@ -94,22 +65,18 @@ CREATE TABLE orders(
 	district VARCHAR(50),
 	city VARCHAR(50),
 	state VARCHAR(50),
-	
+
 	order_items_id INTEGER,
 	total_value DECIMAL(8,2),
 	freight_company VARCHAR(50),
 	order_date TIMESTAMP,
-	
-	PRIMARY KEY (order_id),
+
+	PRIMARY KEY (order_id)
 );
 
 CREATE TABLE order_items(
 	order_items_id SERIAL NOT NULL,
-	product_id INTEGER,
-	
-	CONSTRAINT fk_product
-		FOREIGN KEY (product_id)
-		REFERENCES products (product_id)
-		ON DELETE CASCADE
-		ON UPDATE RESTRICT
+	product_id INTEGER REFERENCES products (product_id)
 );
+
+
