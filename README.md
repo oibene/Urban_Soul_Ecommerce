@@ -4,7 +4,6 @@
 - [Linguagens e Aplicações](#linguagens-e-aplicações-utilizadas) <br>
 - [Fluxograma](#fluxograma-de-navegação-pelo-site) <br>
 - [Requisitos](#requisitos-do-sistema) <br>
-- [Arquitetura](#arquitetura-mvc) <br>
 
 ****
 
@@ -19,7 +18,6 @@
 
 ## LINGUAGENS E APLICAÇÕES UTILIZADAS
  Esse serviço é focado na simplicidade e estudo, onde:
- - Usa-se uma arquitetura MVC (Model-View-Controller)
  - Para a [aplicação frontend](https://github.com/oibene/urbansoul-app) é usada a framework Reactjs.
  - Para a [API backend](https://github.com/oibene/urbansoul-API) é usado a arquitetura REST com a linguagem GO.
 
@@ -62,10 +60,5 @@
  - Sistema de resgate de conta envia confirmação por e-mail ou whatsapp para redefinição de conta;
  - Sistema de 2 etapas por e-mail ou whatsapp;
  - Telas que durem mais de 2 segundos deveram possuir tela de carregamento.
-
-****
-
-## ARQUITETURA MVC
-  Em desenvolvimento
-  
+   
 ****
