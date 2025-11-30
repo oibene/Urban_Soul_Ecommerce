@@ -4,3 +4,25 @@ Esse repositorio se dispoe de pastas
 - Submodulos: Tanto a API quanto o App são separados em diferentes repositorios para uma manutenção mais controlada
 
 Informações relevantes sobre o projeto, explicação de requisitos, diagramas, linguagens e ferramentas utilizadas estão disponiveis na [WIKI](https://github.com/oibene/Urban_Soul_Ecommerce/wiki) do projeto
+
+
+Para atualizar Submodules
+
+> Dentro do Repositorio inicie a atualização
+> ```
+> git submodule init
+> ```
+
+Atualize a API e o app (dependendo de qual estiver desatualizado)
+ 
+> APP
+> ```
+> git submodule update --remote urbansoul-app
+> ```
+
+> API
+> ```
+> git submodule update --remote urbansoul-API
+> ```
+
+Commite as atualizações!
